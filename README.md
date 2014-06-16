@@ -48,6 +48,34 @@ Padrino.mount('LetterOpener::Web::App').to('/inbox')
 Padrino.mount('SampleProject::App', :app_file => Padrino.root('app/app.rb')).to('/')
 ```
 
+## Sinatra Sample
+
+```ruby
+# app.rb
+module Sample
+  class App < Sinatra::Base
+    configure do
+      set :root, File.dirname(__FILE__)
+      LetterOpener.location = File.join("#{root}/tmp")
+      Mail.defaults do
+        delivery_method LetterOpener::DeliveryMethod
+      end
+    end
+  end
+end
+```
+
+```ruby
+# config.ru
+map '/' do
+  run Sample::App.new
+end
+
+map '/inbox' do
+  run LetterOpener::Web::App.new
+end
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/letter_opener-web/fork )

@@ -3,10 +3,11 @@ require 'rack/test'
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'minitest/spec'
-require 'minitest-power_assert'
 require 'mail'
-
 require 'letter_opener/web'
+if RUBY_VERSION >= '2.0'
+  require 'minitest-power_assert'
+end
 
 class MiniTest::Spec
   include Rack::Test::Methods

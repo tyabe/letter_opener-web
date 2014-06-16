@@ -1,5 +1,5 @@
 require 'letter_opener'
-require 'letter_opener/web/delivery_method'
+require_relative 'delivery_method'
 require 'letter_opener/web/app'
 module LetterOpener
 

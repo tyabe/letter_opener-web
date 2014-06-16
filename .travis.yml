@@ -1,0 +1,18 @@
+language: ruby
+before_install: gem install bundler --pre
+install:
+  - gem update --system
+  - bundle update
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.1
+  - rbx
+  - jruby
+branches:
+  only:
+    - master
+matrix:
+  allow_failures:
+    - rvm: rbx
+    - rvm: jruby

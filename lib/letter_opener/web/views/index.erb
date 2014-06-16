@@ -1,0 +1,48 @@
+<div class='navbar navbar-fixed-top header'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <a class='navbar-brand' href="<%= root_path %>">Letter Opener</a>
+    </div>
+  </div>
+</div>
+<div class='navbar navbar-default navbar-fixed-top navbar-action'>
+  <div class='container'>
+    <ul class='nav sute-nav'>
+      <li class="action">
+        <div class="actions">
+          <input id="toggle_selection" type="checkbox" />
+          <label for="toggle_selection"></label>
+          <form id="delete" action="<%= root_path %>" method="post" data-confirm="Are you sure?">
+            <input type="hidden" name="_method" value="delete" />
+            <input type="hidden" name="message_ids" value="" />
+            <button type="submit" class="btn btn-danger" title="Clear inbox">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </form>
+          <a class="btn btn-primary refresh" href="<%= root_path %>">
+            <span class="glyphicon glyphicon-refresh"></span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="left">
+  <ul class="list-group message_list">
+    <% @messages.each do |message| -%>
+      <li class="list-group-item message">
+        <input id="message_<%= message.id %>" name="message_ids[]" type="checkbox" value="<%= message.id %>" />
+        <label for="message_<%= message.id %>"></label>
+        <a href="<%= root_path + message.id %>" target='mail'>
+          <dl>
+            <dt><%= message.info[:subject] || message.id %></dt>
+            <dd class="text-right"><small><%= message.sent_at %></small></dd>
+          </dl>
+        </a>
+      </li>
+    <% end -%>
+  </ul>
+</div>
+<div class="right">
+  <iframe name="mail" id="mail" src="about:blank"></iframe>
+</div>

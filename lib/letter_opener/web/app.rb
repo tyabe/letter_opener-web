@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'erb'
 require 'letter_opener/web/message'
 module LetterOpener
   module Web

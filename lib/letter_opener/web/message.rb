@@ -1,3 +1,4 @@
+require 'yaml'
 module LetterOpener
   module Web
     class Message

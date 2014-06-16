@@ -29,7 +29,7 @@
 </div>
 <div class="left">
   <ul class="list-group message_list">
-    <% @messages.each do |message| -%>
+    <% @messages.each do |message| %>
       <li class="list-group-item message">
         <input id="message_<%= message.id %>" name="message_ids[]" type="checkbox" value="<%= message.id %>" />
         <label for="message_<%= message.id %>"></label>
@@ -40,7 +40,7 @@
           </dl>
         </a>
       </li>
-    <% end -%>
+    <% end %>
   </ul>
 </div>
 <div class="right">

@@ -1,5 +1,6 @@
 # LetterOpener::Web
 
+[![Gem Version](https://badge.fury.io/rb/letter_opener-web.svg)](http://badge.fury.io/rb/letter_opener-web)
 [![Build Status](https://travis-ci.org/tyabe/letter_opener-web.svg)](https://travis-ci.org/tyabe/letter_opener-web)
 
 A Sinatra-based frontend to the [letter_opener](https://github.com/ryanb/letter_opener).  

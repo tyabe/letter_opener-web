@@ -40,12 +40,16 @@ Then set the delivery method and mount app in `config/apps.rb`
 
 ```ruby
 Padrino.configure_apps do
-  # If you will specify a message file location.
-  # LetterOpener.location = Padrino.root('tmp/letter_opener')
-  set :delivery_method, LetterOpener::DeliveryMethod => {}
+  if Padrino.env == :development
+    # If you will specify a message file location.
+    # LetterOpener.location = Padrino.root('tmp/letter_opener')
+    set :delivery_method, LetterOpener::DeliveryMethod => {}
+  end
 end
 
-Padrino.mount('LetterOpener::Web::App').to('/inbox')
+if Padrino.env == :development
+  Padrino.mount('LetterOpener::Web::App').to('/inbox')
+end
 Padrino.mount('SampleProject::App', :app_file => Padrino.root('app/app.rb')).to('/')
 ```
 
@@ -57,9 +61,11 @@ module Sample
   class App < Sinatra::Base
     configure do
       set :root, File.dirname(__FILE__)
-      LetterOpener.location = File.join("#{root}/tmp")
-      Mail.defaults do
-        delivery_method LetterOpener::DeliveryMethod
+      if ENV['RACK_ENV'] == 'development'
+        LetterOpener.location = File.join("#{root}/tmp")
+        Mail.defaults do
+          delivery_method LetterOpener::DeliveryMethod
+        end
       end
     end
   end

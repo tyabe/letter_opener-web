@@ -1,6 +1,9 @@
 require 'yaml'
 module LetterOpener
   class DeliveryMethod
+    class InvalidOption < StandardError; end
+
+    attr_accessor :settings
 
     def initialize(options = {})
       raise InvalidOption, "A location option is required when using the Letter Opener delivery method" if LetterOpener.location.nil?

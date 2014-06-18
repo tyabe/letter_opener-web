@@ -11,6 +11,13 @@ module LetterOpener
 
       enable :method_override
 
+      if defined?(Padrino) && Padrino.version < '0.12.0'
+        def self.dependencies; []; end
+        def self.setup_application!; end
+        def self.reload!; end
+        set :erb, :engine_class => Padrino::Erubis::SafeBufferTemplate
+      end
+
       def root_path
         "#{env['SCRIPT_NAME']}/"
       end

@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/letter_opener-web.svg)](http://badge.fury.io/rb/letter_opener-web)
 [![Build Status](https://travis-ci.org/tyabe/letter_opener-web.svg)](https://travis-ci.org/tyabe/letter_opener-web)
 [![Coverage Status](https://coveralls.io/repos/tyabe/letter_opener-web/badge.png)](https://coveralls.io/r/tyabe/letter_opener-web)
+[![Code Climate](https://codeclimate.com/github/tyabe/letter_opener-web.png)](https://codeclimate.com/github/tyabe/letter_opener-web)
 
 A Sinatra-based frontend to the [letter_opener](https://github.com/ryanb/letter_opener).  
 This provides almost the same feature as the [letter_opener_web](https://github.com/fgrehm/letter_opener_web).  

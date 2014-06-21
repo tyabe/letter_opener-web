@@ -21,6 +21,12 @@ module LetterOpener
         end
       end
 
+      helpers do
+        def h(text)
+          Rack::Utils.escape_html(text)
+        end
+      end
+
       def root_path
         "#{env['SCRIPT_NAME']}/"
       end

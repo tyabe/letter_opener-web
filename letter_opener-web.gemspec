@@ -27,4 +27,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest-power_assert"
   spec.add_development_dependency "rack-test"
   spec.add_development_dependency "mail"
+  spec.add_development_dependency 'capybara'
+  spec.add_development_dependency 'capybara-webkit'
+  spec.add_development_dependency 'capybara_minitest_spec'
+  spec.add_development_dependency 'poltergeist'
 end

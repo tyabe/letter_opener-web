@@ -35,7 +35,7 @@
         <label for="message_<%= message.id %>"></label>
         <a href="<%= root_path + message.id %>" target='mail'>
           <dl>
-            <dt><%= message.info[:subject] || message.id %></dt>
+            <dt><%=h message.info[:subject] || message.id %></dt>
             <dd class="text-right"><small><%= message.sent_at %></small></dd>
           </dl>
         </a>

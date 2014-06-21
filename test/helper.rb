@@ -3,6 +3,10 @@ require 'rack/test'
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'minitest/spec'
+require 'capybara'
+require 'capybara/dsl'
+require 'capybara/webkit'
+require 'capybara/poltergeist'
 require 'mail'
 require 'letter_opener/web'
 if RUBY_VERSION >= '2.0'
@@ -15,6 +19,7 @@ end
 
 class MiniTest::Spec
   include Rack::Test::Methods
+  include Capybara::DSL
   def app
     LetterOpener::Web::App
   end
@@ -35,3 +40,7 @@ end
 MiniTest::Spec.after do
   FileUtils.rm_rf(test_location)
 end
+
+Capybara.app = LetterOpener::Web::App
+Capybara.default_driver = :webkit
+Capybara.javascript_driver = :poltergeist

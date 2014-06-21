@@ -56,6 +56,14 @@ input[type="checkbox"] + label {
 #delete {
   display:inline;
 }
+#search {
+  top: 0px;
+  left: 128px;
+  position: absolute;
+}
+#search .form-control-feedback {
+  right: 0px;
+}
 .left {
   overflow-y: auto;
   margin-top: 96px;

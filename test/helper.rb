@@ -9,7 +9,7 @@ require 'capybara/webkit'
 require 'capybara/poltergeist'
 require 'mail'
 require 'letter_opener/web'
-if RUBY_VERSION >= '2.0'
+if /^ruby/ =~ RUBY_DESCRIPTION && RUBY_VERSION >= '2.0'
   require 'minitest-power_assert'
 end
 if ENV['TRAVIS']

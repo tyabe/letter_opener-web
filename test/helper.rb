@@ -8,6 +8,10 @@ require 'letter_opener/web'
 if RUBY_VERSION >= '2.0'
   require 'minitest-power_assert'
 end
+if ENV['TRAVIS']
+  require 'coveralls'
+  Coveralls.wear!
+end
 
 class MiniTest::Spec
   include Rack::Test::Methods

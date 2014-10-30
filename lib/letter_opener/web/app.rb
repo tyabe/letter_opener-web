@@ -11,7 +11,7 @@ module LetterOpener
 
       enable :method_override
 
-      if defined?(Padrino)
+      if defined?(Padrino) && Padrino.version < '0.13.0'
         def self.setup_application!; end
         def self.dependencies; []; end
         def self.reload!; end

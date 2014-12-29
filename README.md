@@ -1,5 +1,8 @@
 # LetterOpener::Web
 
+## Notice
+This project moved to [Goatmail](https://github.com/tyabe/goatmail).
+
 [![Gem Version](https://badge.fury.io/rb/letter_opener-web.svg)](http://badge.fury.io/rb/letter_opener-web)
 [![Build Status](https://travis-ci.org/tyabe/letter_opener-web.svg)](https://travis-ci.org/tyabe/letter_opener-web)
 [![Coverage Status](https://coveralls.io/repos/tyabe/letter_opener-web/badge.png)](https://coveralls.io/r/tyabe/letter_opener-web)

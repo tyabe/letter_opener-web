@@ -13,6 +13,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://github.com/tyabe/letter_opener-web"
   spec.license       = "MIT"
 
+  spec.post_install_message = <<-MESSAGE
+  !    The 'letter_opener-web' gem has been deprecated and has been replaced by 'goatmail'.
+  !    See: https://rubygems.org/gems/goatmail
+  !    And: https://github.com/tyabe/goatmail
+  MESSAGE
+
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
